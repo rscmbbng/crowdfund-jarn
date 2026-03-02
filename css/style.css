@@ -21,7 +21,6 @@
 body {
   text-align: center;
   background-color: var(--background);
-  background-image: url("../assets/sagen-bright.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1400px 2100px;
