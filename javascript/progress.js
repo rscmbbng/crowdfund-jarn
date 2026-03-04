@@ -1,32 +1,46 @@
-SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSQS9UzTIvJv6WDBx-2bd3i7eCaxU-wWnHwX-hFNmA1bpHqrjHXVuGnqNMGw6Pll-hge587iMRIPaXT/pub?output=csv'
+const SHEET_ID = '2PACX-1vSQS9UzTIvJv6WDBx-2bd3i7eCaxU-wWnHwX-hFNmA1bpHqrjHXVuGnqNMGw6Pll-hge587iMRIPaXT';
+const GID_ID = '1308576484';
+const FUNDING_URL = `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pub?output=csv`;
+const CONTENT_URL = `https://docs.google.com/spreadsheets/d/e/${SHEET_ID}/pub?output=tsv&gid=${GID_ID}`;
 
 const total = 1600000;
 
-fetch(SHEET_URL)
-  .then(res => res.text())
-  .then(csv => {
-    const rows = csv.trim().split('\n').slice(1); // skip header row
-    let remainder = total;
-    const chart = document.querySelector('.chart');
+Promise.all([
+  fetch(FUNDING_URL).then(r => r.text()),
+  fetch(CONTENT_URL).then(r => r.text())
+]).then(([fundingCsv, contentTsv]) => {
 
-    rows.forEach(row => {
-      const [id, label, value] = row.split(',');
-      const num = parseInt(value);
-      remainder -= num;
-      const span = document.createElement('span');
-      span.id = id.trim();
-      span.className = 'block';
-      span.title = label.trim();
-      span.innerHTML = `<span class="value">${num.toLocaleString('sv-SE')}</span>`;
-      span.style.width = num / total * 100 + '%';
-      chart.appendChild(span);
-    });
+  // --- Funding chart ---
+  const rows = fundingCsv.trim().split('\n').slice(1);
+  let remainder = total;
+  const chart = document.querySelector('.chart');
 
-    const saknas = document.createElement('span');
-    saknas.id = 'saknas';
-    saknas.className = 'block';
-    saknas.title = 'Saknas';
-    saknas.innerHTML = `<span class="value">${remainder.toLocaleString('sv-SE')}</span>`;
-    saknas.style.width = remainder / total * 100 + '%';
-    chart.appendChild(saknas);
+  rows.forEach(row => {
+    const [id, label, value] = row.split(',');
+    const num = parseInt(value);
+    remainder -= num;
+    const span = document.createElement('span');
+    span.id = id.trim();
+    span.className = 'block';
+    span.title = label.trim();
+    span.innerHTML = `<span class="value">${num.toLocaleString('sv-SE')}</span>`;
+    span.style.width = num / total * 100 + '%';
+    chart.appendChild(span);
   });
+
+  const saknas = document.createElement('span');
+  saknas.id = 'saknas';
+  saknas.className = 'block';
+  saknas.title = 'Saknas';
+  saknas.innerHTML = `<span class="value">${remainder.toLocaleString('sv-SE')}</span>`;
+  saknas.style.width = remainder / total * 100 + '%';
+  chart.appendChild(saknas);
+
+  // --- Text content CMS ---
+  contentTsv.trim().split('\n').slice(1).forEach(row => {
+    const [key, ...rest] = row.split('\t');
+    const el = document.querySelector(`[data-cms="${key.trim()}"]`);
+    if (el) el.innerHTML = rest.join('\t').trim();
+  });
+
+});
