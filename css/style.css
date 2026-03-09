@@ -7,17 +7,25 @@
   --col4: #3f8565;
   --col5: #74bb98;
   --col0: #ffffff;
-  --main: #005336;
-  --secondary: #3f8565;
-  --text: #202020;
-  --background: #e4eae1;
+  --main: #3f8565;
+  --secondary: #005336;
+  --text: #000;
+  --background: #e4e9e0; 
 }
 
 @font-face {
-  font-family: AvenirBlack;
-  src: url(../assets/fonts/Avenir-Black.tff) format('truetype');
-  src: url(../assets/fonts/Avenir-Black.woff) format('woff');
+  font-family: LilitaOne;
+  src: url(../assets/fonts/LilitaOne-Regular.ttf) format('truetype');
 }
+@font-face {
+  font-family: WorkSans;
+  src: url(../assets/fonts/WorkSans-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+  font-family: Sriracha;
+  src: url(../assets/fonts/Sriracha-Regular.ttf) format('truetype');
+}
+
 body {
   text-align: center;
   background-color: var(--background);
@@ -40,6 +48,7 @@ main {
   padding-right: 20px;
 }
 .about {
+  padding-top: 36px;
   font-size: 12px;
   text-align: center;
   color: var(--main);
@@ -58,21 +67,23 @@ a {
 h1{
   margin: 0px;
   color: var(--main);
-  font-family: AvenirBlack;
+  font-family: LilitaOne;
   font-size: 36px;
   line-height: 1em;
+  text-transform: uppercase;
 }
 h2 {
   color: var(--main);
-  font-family: AvenirBlack;
+  font-family: Sriracha;
   font-size: 20px;
   padding-top: 10px;
   margin: 0;
   text-align: left;
+  /* text-transform: uppercase; */
 }
 h3{
   color: var(--main);
-  font-family: AvenirBlack;
+  font-family: Sriracha;
   font-size: 20px;
   margin: 0px;
   padding-bottom: 20px;
@@ -99,7 +110,7 @@ h3{
 }
 p {
   color: var(--text);
-  font-family: 'Khula', sans-serif;
+  font-family: 'WorkSans', sans-serif;
   font-weight: 300;
   font-size: 14px;
   text-align: left;
@@ -127,7 +138,7 @@ figure {
 }
 .graphic {
   /* padding-left: 30px; */
-  font-family: 'Khula', sans-serif;
+  font-family: WorkSans, sans-serif;
   font-weight: 300;
   /* background-color: ; */
   color: white;
@@ -200,7 +211,7 @@ figure {
 }
 .x-axis {
   text-align: center;
-  font-family: 'Khula', sans-serif;
+  font-family: WorkSans, sans-serif;
   font-size: 12px;
   font-weight: 300;
 }
