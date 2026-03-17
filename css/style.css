@@ -114,6 +114,7 @@ p {
   font-weight: 300;
   font-size: 14px;
   text-align: left;
+  white-space: pre-wrap;
 }
 #page-title{
   display: inline;
