@@ -81,6 +81,29 @@ h2 {
   text-align: left;
   /* text-transform: uppercase; */
 }
+details.sub-section > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details.sub-section > summary::-webkit-details-marker {
+  display: none;
+}
+details.sub-section > summary h2 {
+  color: var(--main);
+}
+details.sub-section > summary h2::after {
+  content: ' ▸';
+  font-size: 0.75em;
+  font-family: WorkSans, sans-serif;
+  font-weight: 300;
+}
+details.sub-section[open] > summary h2 {
+  color: var(--main);
+}
+details.sub-section[open] > summary h2::after {
+  content: ' ▾';
+}
+
 h3{
   color: var(--main);
   font-family: Sriracha;
