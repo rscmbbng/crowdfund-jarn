@@ -281,6 +281,9 @@ figure {
   height: 8px;
   background-color: var(--col0);
 }
+#topimage {
+	width: 70%;
+  }
 
 @media screen and (min-width: 768px) {
   h6 {
@@ -294,9 +297,6 @@ figure {
   }
   .legend {
     width: 60%;
-  }
-#topimage {
-	width: 70%;
   }
 }
 
@@ -322,9 +322,6 @@ figure {
   p {
     font-size: 12px;
   }
-#topimage {
-	width: 90%;
-  }
 }
 
 /* IPHONE 5S/SE*/
@@ -349,8 +346,4 @@ figure {
   p {
     font-size: 12px;
   }
-#topimage {
-	width: 90%;
-  }
-
 }
