@@ -119,8 +119,6 @@ button{
   text-transform: uppercase;
   border: none;
   padding: 10px;
-  width: 100%;
-  margin-top:1em;
   cursor: pointer;
 }
 #building, #group {
@@ -147,12 +145,15 @@ p, li {
   color: var(--text);
   font-family: 'WorkSans', sans-serif;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 12px;
   text-align: left;
   white-space: pre-wrap;
 }
 li {
   margin-top: 10px;
+}
+#lengend {
+  margin-top: 2px;
 }
 .image-desc{
   font-style: italic;
@@ -211,7 +212,7 @@ figure {
 }
 .block {
   display: block;
-  height: 100px;
+  height: 80px;
   color: var(--background);
   font-size: .75em;
   float: left;
@@ -263,26 +264,26 @@ figure {
 }
 .legend {
   margin: 0 auto;
-  padding-left: 20px;
-  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 10px;
 }
 .legend li {
   color: var(--text);
   display: inline-block;
-  padding-right: 20px;
   line-height: 1em;
-  font-size: 14px;
+  font-size: 10px;
 }
 .legend li:before {
   content: "";
-  margin-right: .5em;
+  margin-right: .2em;
   display: inline-block;
   width: 8px;
   height: 8px;
   background-color: var(--col0);
 }
 #topimage {
-	width: 70%;
+	width: 50%;
   }
 
 @media screen and (min-width: 768px) {
@@ -296,7 +297,7 @@ figure {
     font-size: 1em;
   }
   .legend {
-    width: 60%;
+    width: 80%;
   }
 }
 
@@ -318,9 +319,6 @@ figure {
     padding-right: 0;
     padding-top: 30px;
     padding-bottom: 30px;
-  }
-  p {
-    font-size: 12px;
   }
 }
 
