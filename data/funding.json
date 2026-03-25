@@ -3,7 +3,7 @@
   "items": [
     { "id": "don",     "label": "Mottagna donationer", "value": 50000 },
     { "id": "ut-don",  "label": "Utlovade donationer",  "value": 50000 },
-    { "id": "lan",     "label": "Mottagna lån",         "value": 50000 },
+    { "id": "inv",     "label": "Utlovade insatser och investeringar","value": 50000 },
     { "id": "ut-lan",  "label": "Erbjudna lån",         "value": 150000 },
     { "id": "till-lan","label": "Tillfälliga lån",      "value": 800000 }
   ]
