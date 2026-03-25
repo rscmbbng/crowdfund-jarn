@@ -262,7 +262,7 @@ figure {
   font-size: 12px;
   font-weight: 300;
 }
-.legend {
+.legend-title {
   margin: 0 auto;
   padding-left: 10px;
   padding-right: 10px;
@@ -277,6 +277,7 @@ figure {
 .legend li:before {
   content: "";
   margin-right: .2em;
+  margin-left: .2em;
   display: inline-block;
   width: 8px;
   height: 8px;
