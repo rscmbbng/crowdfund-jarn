@@ -93,7 +93,7 @@ details.sub-section > summary h2 {
 }
 details.sub-section > summary h2::after {
   content: ' ▸';
-  font-size: 0.75em;
+  font-size: 12px;
   font-family: WorkSans, sans-serif;
   font-weight: 300;
 }
@@ -214,7 +214,7 @@ figure {
   display: block;
   height: 80px;
   color: var(--background);
-  font-size: .75em;
+  font-size: 12px;
   float: left;
   background-color: var(--col0);
   position: relative;
@@ -293,9 +293,6 @@ figure {
     width: 75px;
     float: left;
     line-height: 100px;
-  }
-  .block {
-    font-size: 1em;
   }
   .legend {
     width: 80%;
