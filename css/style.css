@@ -75,7 +75,7 @@ h1{
 h2 {
   color: var(--main);
   font-family: Sriracha;
-  font-size: 22px;
+  font-size: 2em;
   padding-top: 10px;
   margin: 0;
   text-align: left;
@@ -93,7 +93,7 @@ details.sub-section > summary h2 {
 }
 details.sub-section > summary h2::after {
   content: ' ▸';
-  font-size: 12px;
+  font-size: 18px;
   font-family: WorkSans, sans-serif;
   font-weight: 300;
 }
@@ -107,7 +107,7 @@ details.sub-section[open] > summary h2::after {
 h3{
   color: var(--main);
   font-family: Sriracha;
-  font-size: 22px;
+  font-size: 1.5em;
   margin: 0px;
   padding-bottom: 20px;
 }
@@ -145,7 +145,7 @@ p, li {
   color: var(--text);
   font-family: 'WorkSans', sans-serif;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 18px;
   text-align: left;
   white-space: pre-wrap;
 }
